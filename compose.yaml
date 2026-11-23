@@ -1,0 +1,31 @@
+
+services:
+  softwins:
+    container_name: softwins
+    image: node:22-alpine
+
+    working_dir: /app
+
+    volumes:
+      - ./softwins:/app
+      - softwins_node_modules:/app/node_modules
+
+    command: "npm run dev -- --hostname 0.0.0.0"
+
+    ports:
+      - "127.0.0.1:3000:3000"
+
+    networks:
+      - webcreatix
+
+    restart: unless-stopped
+
+    init: true
+
+volumes:
+  softwins_node_modules:
+
+networks:
+  webcreatix:
+    external: true
+    name: webcreatix

@@ -1,0 +1,7 @@
+FROM postgres:17
+
+ENV POSTGRES_DB=webcreatix
+ENV POSTGRES_USER=webcreatix
+ENV POSTGRES_PASSWORD=Gmailamir11223
+
+EXPOSE 5432

@@ -1,0 +1,42 @@
+# Dependencies
+**/node_modules/
+
+# Next.js
+**/.next/
+
+# Build outputs
+**/dist/
+**/build/
+**/out/
+
+# Tauri generated files
+**/src-tauri/target/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# PostgreSQL runtime data
+/databases/postgres/
+
+
+# Generated AppImage bundle
+/softwins/public/download/soft/0.1.0/graphical/appimage/soft.AppDir/
+
+# Soft release binaries
+*.AppImage
+*.deb
+*.rpm
+*.zip
+
+# Extracted Debian package contents
+/softwins/public/download/soft/0.1.0/graphical/deb/soft_0.1.0_amd64/

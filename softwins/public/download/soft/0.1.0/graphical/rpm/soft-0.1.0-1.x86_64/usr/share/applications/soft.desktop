@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=
+Comment=A Tauri App
+Exec=soft
+StartupWMClass=soft
+Icon=soft
+Name=soft
+Terminal=false
+Type=Application

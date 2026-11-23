@@ -1,0 +1,329 @@
+
+/* =========================
+   1. Design Variables
+========================= */
+
+.login-page {
+  --brown: #A58D7A;
+  --silver: #C7CBD2;
+  --gray: #858B96;
+  --blue: #829BB9;
+
+  --background: #17191E;
+  --card: #20232A;
+  --field: #252932;
+  --text: #E5E7EB;
+  --muted: #999FAA;
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  color: var(--text);
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      #829bb91c,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      #a58d7a1c,
+      transparent 35%
+    ),
+    var(--background);
+
+  font-family: inherit;
+}
+
+
+/* =========================
+   2. Main Card
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 410px;
+  padding: 38px;
+
+  background: linear-gradient(
+    145deg,
+    #292D35,
+    var(--card)
+  );
+
+  border: 1px solid #ffffff12;
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px #00000055,
+    inset 0 1px 0 #ffffff12;
+
+  animation: login-appear 0.6s ease;
+}
+
+
+/* =========================
+   3. Brand
+========================= */
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+
+  display: grid;
+  place-items: center;
+
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--brown)
+  );
+
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #829bb933;
+}
+
+.login-brand h1 {
+  margin: 0;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.login-brand p,
+.login-heading p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+
+/* =========================
+   4. Heading
+========================= */
+
+.login-heading {
+  margin-bottom: 25px;
+}
+
+.login-heading h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.login-heading p {
+  margin-top: 9px;
+}
+
+
+/* =========================
+   5. Input Fields
+========================= */
+
+.login-fields {
+  display: grid;
+  gap: 17px;
+}
+
+.login-field {
+  position: relative;
+}
+
+.login-field input {
+  width: 100%;
+  height: 55px;
+  padding: 18px 42px 10px 14px;
+
+  color: var(--text);
+  background: var(--field);
+
+  border: 1px solid #ffffff18;
+  border-radius: 12px;
+
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+
+  transition: 0.25s ease;
+}
+
+.login-field label {
+  position: absolute;
+  right: 42px;
+  top: 18px;
+
+  color: var(--muted);
+  font-size: 13px;
+
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.login-field input:focus,
+.login-field input:not(:placeholder-shown) {
+  border-color: var(--blue);
+  background: #2B303A;
+  box-shadow: 0 0 0 3px #829bb91a;
+}
+
+.login-field input:focus + label,
+.login-field input:not(:placeholder-shown) + label {
+  top: 6px;
+  font-size: 10px;
+  color: var(--blue);
+}
+
+.field-icon {
+  position: absolute;
+  right: 15px;
+  top: 17px;
+  color: var(--silver);
+  pointer-events: none;
+}
+
+.password-toggle {
+  position: absolute;
+  left: 13px;
+  top: 15px;
+
+  border: none;
+  background: none;
+  color: var(--muted);
+
+  cursor: pointer;
+  font-size: 17px;
+}
+
+
+/* =========================
+   6. Options
+========================= */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  margin: 20px 0;
+  font-size: 11px;
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.remember-option input {
+  accent-color: var(--blue);
+}
+
+.login-options a,
+.login-register a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.login-options a:hover,
+.login-register a:hover {
+  color: var(--silver);
+}
+
+
+/* =========================
+   7. Submit Button
+========================= */
+
+.login-submit {
+  width: 100%;
+  height: 50px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  background: linear-gradient(
+    110deg,
+    #7189A6,
+    #9C897B
+  );
+
+  box-shadow: 0 8px 22px #7189A633;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px #7189A655;
+}
+
+.login-submit:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   8. Register & Footer
+========================= */
+
+.login-register {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.login-footer {
+  margin-top: 35px;
+  text-align: center;
+
+  color: #737985;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   9. Animation & Responsive
+========================= */
+
+@keyframes login-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 27px 22px;
+  }
+}

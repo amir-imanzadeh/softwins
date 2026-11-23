@@ -1,0 +1,309 @@
+
+.blockLoginForm {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(90vw, 380px);
+    max-height: 90dvh;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: clamp(20px, 5vw, 36px);
+    border: 1px solid rgba(130, 170, 255, 0.2);
+    border-radius: 20px;
+
+    background: rgba(3, 15, 49, 0.815);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #f1f5ff;
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 20px 60px rgb(0, 0, 0);
+
+    z-index: 20;
+    opacity: 0;
+    animation: entryAnimation 1.3s forwards;
+}
+
+/* Main form */
+
+.blockLoginForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.blockLoginForm p {
+    margin: 0 0 8px;
+
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* Inputs */
+
+.blockLoginForm input {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(150, 180, 255, 0.482);
+    border-radius: 12px;
+    outline: none;
+
+    background: rgba(0, 11, 36, 0.311);
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 1rem;
+
+    transition:
+        border-color 180ms ease,
+        background-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.blockLoginForm input::placeholder {
+    color: #aab8d8;
+}
+
+.blockLoginForm input:focus {
+    border-color: #6b9dff;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 0 3px rgba(80, 130, 255, 0.18);
+}
+
+/* General buttons */
+
+.blockLoginForm button {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #1f3878, #280659b3);
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        filter 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.blockLoginForm button:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 8px 24px rgba(71, 123, 255, 0.25);
+}
+
+.blockLoginForm button:active {
+    transform: scale(0.98);
+}
+
+.blockLoginForm button:focus-visible {
+    outline: 3px solid #a9c4ff;
+    outline-offset: 3px;
+}
+
+/* Login / Signup links */
+
+.blockLoginForm .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    height: 40px;
+    gap: 10px;
+}
+
+.blockLoginForm .links p {
+    display: flex;
+    align-items: center;
+
+    margin: 7px 0 0;
+    height: 50px;
+
+    font-size: 12px;
+}
+
+.blockLoginForm .links button {
+    flex: 0 0 60px;
+
+    width: 60px;
+    height: 30px;
+    padding: 0;
+
+    font-size: 13px;
+
+    background: transparent;
+    color: rgba(150, 180, 255, 0.68);
+
+    border: 1px solid rgba(150, 180, 255, 0.68);
+    border-radius: 12px;
+}
+
+/* Signup form */
+
+.signupForm {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Signup input container */
+
+.signupForm .inputDiv {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+}
+
+/* Each signup step */
+
+.signupForm .inputDiv > div {
+    display: flex;
+    flex-direction: column;
+    position: static;
+
+    width: 100%;
+    gap: 8px;
+}
+
+/* Signup field labels */
+
+.signupForm .inputDiv div p {
+    display: block;
+
+    margin: 0 0 0 15px;
+
+    font-size: 12px;
+    text-align: left;
+}
+
+/* Signup navigation */
+
+.signupForm .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    width: 100%;
+    gap: 10px;
+
+    margin: 0 0 10px;
+}
+
+/* Navigation buttons */
+
+.signupForm .buttons button {
+    flex: 1 1 0;
+
+    width: auto;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(150, 180, 255, 0.482);
+    border-radius: 12px;
+
+    background: rgba(0, 11, 36, 0.311);
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 1rem;
+}
+
+/* Final Signup button */
+
+.signupForm .buttons button[type="submit"] {
+    flex: 1 1 100%;
+    width: 100%;
+
+    background: linear-gradient(135deg, #1f3878, #280659b3);
+    border: none;
+}
+
+/* Hide unnecessary line breaks */
+
+.signupForm br {
+    display: none;
+}
+
+/* Hidden elements */
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .blockLoginForm {
+        width: calc(100vw - 32px);
+        border-radius: 16px;
+        padding: 24px;
+    }
+}
+
+@media (max-height: 500px) {
+    .blockLoginForm {
+        max-height: 94dvh;
+        padding-block: 16px;
+    }
+
+    .blockLoginForm form {
+        gap: 10px;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .blockLoginForm *,
+    .blockLoginForm *::before,
+    .blockLoginForm *::after {
+        transition: none;
+    }
+}
+
+/* Entry animation */
+
+@keyframes entryAnimation {
+    0%, 10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

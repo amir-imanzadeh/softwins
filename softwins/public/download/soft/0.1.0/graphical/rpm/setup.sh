@@ -1,0 +1,1 @@
+sudo rpm -i soft-0.1.0-1.x86_64.rpm
