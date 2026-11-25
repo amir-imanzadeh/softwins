@@ -38,9 +38,7 @@ jobs:
       - name: Prepare Android SDK
         run: |
           SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
-
           yes | "$SDKMANAGER" --licenses >/dev/null || true
-
           "$SDKMANAGER" --install "ndk;27.1.12297006"
 
           if [ -d "$ANDROID_HOME/platforms/android-37.0" ] && \
